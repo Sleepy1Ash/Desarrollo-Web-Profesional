@@ -14,7 +14,7 @@ class SpringDataApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Student student = new Student("Pedro", "Picapiedra");
+		Student student = new Student(null,"Don Gato", "Y su Pandilla");
 		studentRepository.save(student);
 	}
 

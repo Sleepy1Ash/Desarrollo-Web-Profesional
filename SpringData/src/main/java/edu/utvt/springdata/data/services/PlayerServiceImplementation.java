@@ -1,11 +1,16 @@
 package edu.utvt.springdata.data.services;
 
+import edu.utvt.springdata.common.NotFoundElementException;
 import edu.utvt.springdata.data.entities.Player;
 import edu.utvt.springdata.data.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -16,6 +21,7 @@ public class PlayerServiceImplementation implements PlayerService {
 
     @Override
     public Player save(Player player) {
+        this.playerRepository.save(player);
         return null;
     }
 
@@ -45,6 +51,23 @@ public class PlayerServiceImplementation implements PlayerService {
 
     @Override
     public void deleteById(Long playerId) {
+/*
+        if(this.playerRepository.existsById(playerId)){
+            this.playerRepository.deleteById(playerId);
+        }else{
+            throw new NoSuchElementException("No existe el jugador");
+        }
 
+
+        Player playerOptional = this.playerRepository.findById(playerId).orElseThrow(NotFoundElementException::new);
+ */
+        Player playerOptional = this.playerRepository.findById(playerId).orElseThrow(()->new NotFoundElementException("No existe el jugador"));
+        this.playerRepository.delete(playerOptional);
+    }
+
+    @Override
+    public Page<Player> findAll(Integer page, Integer pageSize) {
+        PageRequest pageRequest = PageRequest.of(page, pageSize, Sort.by(Sort.Direction.ASC, "fullName"));
+        return this.playerRepository.findAll(pageRequest);
     }
 }

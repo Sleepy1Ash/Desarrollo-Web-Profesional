@@ -1,0 +1,14 @@
+edu\utvt\springdata\data\services\PlayerService.class
+edu\utvt\springdata\data\entities\Student.class
+edu\utvt\springdata\data\entities\Administrativo.class
+edu\utvt\springdata\data\repositories\AlumnoRepository.class
+edu\utvt\springdata\controllers\PlayerController.class
+edu\utvt\springdata\data\entities\Alumno.class
+edu\utvt\springdata\common\NotFoundElementException.class
+edu\utvt\springdata\data\repositories\AdministrativoRepository.class
+edu\utvt\springdata\data\repositories\StudentRepository.class
+edu\utvt\springdata\data\services\PlayerServiceImplementation.class
+edu\utvt\springdata\data\entities\Player.class
+edu\utvt\springdata\SpringDataApplication.class
+edu\utvt\springdata\data\repositories\PlayerRepository.class
+edu\utvt\springdata\data\entities\Usuario.class

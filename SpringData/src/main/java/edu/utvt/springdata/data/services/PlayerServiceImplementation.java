@@ -10,7 +10,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -21,8 +20,7 @@ public class PlayerServiceImplementation implements PlayerService {
 
     @Override
     public Player save(Player player) {
-        this.playerRepository.save(player);
-        return null;
+        return this.playerRepository.save(player);
     }
 
     @Override

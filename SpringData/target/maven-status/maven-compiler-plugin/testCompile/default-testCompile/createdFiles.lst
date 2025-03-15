@@ -1,2 +1,5 @@
 edu\utvt\springdata\CrudTest.class
 edu\utvt\springdata\InheritanceTests.class
+edu\utvt\springdata\SpringDataApplicationTests.class
+edu\utvt\springdata\JPAQueryMethods.class
+edu\utvt\springdata\OneToManyTest.class
